@@ -3,13 +3,22 @@
 n = int(input("Enter Employee number: "))
 total = 0
 
-
-basic_salary = int(input("Enter Basic Salary : "))
-for i in range(1,n+1):
+for i in range(n):
+    basic_salary = int(input("Enter Basic Salary : "))
     if(basic_salary < 20000):
-        da=10/100 and hra=15/100
+        da=0.10 * basic_salary
+        ta=0.12 * basic_salary
+        hra=01.5* basic_salary
     else:
-        da=15/100 and ta=18/100 and hra=20/100
+        da=0.15 * basic_salary
+        ta=0.18 * basic_salary
+        hra=0.20 * basic_salary
+        
+    total_salary = basic_salary +da +ta+ hra
+    print(f'Total salary for employee {i+1}: {total_salary : .2f}')    
+    total = total +total_salary
+    
+print(f"\nTotal salary of all employees: {total: .2f}")    
 
 
 
