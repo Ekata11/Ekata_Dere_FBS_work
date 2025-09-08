@@ -1,0 +1,9 @@
+## print all no in range divisible by a given no
+
+start = int(input("Enter start : "))
+end = int(input("Enter end : "))
+divisor = int(input("Enter divisor : "))
+
+for i in range(start,end+1):
+    if i % divisor == 0:
+        print(i)
