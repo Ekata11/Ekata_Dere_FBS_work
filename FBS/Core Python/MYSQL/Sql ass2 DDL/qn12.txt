@@ -1,0 +1,44 @@
+mysql> desc book;
+ERROR 1146 (42S02): Table 'firstbit_sql.book' doesn't exist
+mysql> desc books;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| book_no   | int          | NO   | PRI | NULL    |       |
+| book_name | varchar(30)  | YES  |     | NULL    |       |
+| author    | varchar(30)  | YES  |     | NULL    |       |
+| cost      | decimal(7,2) | YES  |     | NULL    |       |
+| category  | char(10)     | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+5 rows in set (0.06 sec)
+
+mysql> insert into books
+    -> (101,'DBMS Guide','Navathe',340,'RDBMS'),
+    -> (102,'O.S','Galvin',440,'Science'),
+    -> (103,'C','Dennis',340,'Science'),
+    -> (104,'SQL','James',740,'Database'),
+    -> (105,'Harry','J.Rowling',720,'Fiction');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '101,'DBMS Guide','Navathe',340,'RDBMS'),
+(102,'O.S','Galvin',440,'Science'),
+(10' at line 2
+mysql> insert into books
+    -> values
+    -> (101,'DBMS Guide','Navathe',340,'RDBMS'),
+    -> (102,'O.S','Galvin',440,'Science'),
+    -> (103,'C','Dennis',340,'Science'),
+    -> (104,'SQL','James',740,'Database'),
+    -> (105,'Harry','J.Rowling',720,'Fiction');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> table books;
++---------+------------+-----------+--------+----------+
+| book_no | book_name  | author    | cost   | category |
++---------+------------+-----------+--------+----------+
+|     101 | DBMS Guide | Navathe   | 340.00 | RDBMS    |
+|     102 | O.S        | Galvin    | 440.00 | Science  |
+|     103 | C          | Dennis    | 340.00 | Science  |
+|     104 | SQL        | James     | 740.00 | Database |
+|     105 | Harry      | J.Rowling | 720.00 | Fiction  |
++---------+------------+-----------+--------+----------+
+5 rows in set (0.00 sec)

@@ -1,0 +1,18 @@
+
+mysql> table books;
++---------+------------+-----------+--------+----------+
+| book_no | book_name  | author    | cost   | category |
++---------+------------+-----------+--------+----------+
+|     101 | DBMS Guide | Navathe   | 340.00 | RDBMS    |
+|     102 | O.S        | Galvin    | 440.00 | Science  |
+|     103 | C          | Dennis    | 340.00 | Science  |
+|     104 | SQL        | James     | 740.00 | Database |
+|     105 | Harry      | J.Rowling | 720.00 | Fiction  |
++---------+------------+-----------+--------+----------+
+5 rows in set (0.00 sec)
+
+mysql> insert into books
+    -> values
+    -> (106,'Story book','xyz',122,'story');
+ERROR 3819 (HY000): Check constraint 'books_chk_1' is violated.
+mysql>

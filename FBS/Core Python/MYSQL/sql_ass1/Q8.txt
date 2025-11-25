@@ -1,0 +1,163 @@
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 30
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use firstbit_sql;
+Database changed
+mysql> show tables;
++------------------------+
+| Tables_in_firstbit_sql |
++------------------------+
+| country                |
+| department             |
+| employees              |
+| job                    |
+| job_history            |
++------------------------+
+5 rows in set (0.01 sec)
+
+mysql> desc employees;
++--------------+---------------+------+-----+---------+-------+
+| Field        | Type          | Null | Key | Default | Extra |
++--------------+---------------+------+-----+---------+-------+
+| employee_id  | int           | YES  |     | NULL    |       |
+| first_name   | varchar(10)   | YES  |     | NULL    |       |
+| last_name    | varchar(10)   | YES  |     | NULL    |       |
+| email        | varchar(15)   | YES  |     | NULL    |       |
+| phone_number | varchar(20)   | YES  |     | NULL    |       |
+| hire_date    | date          | YES  |     | NULL    |       |
+| job_id       | int           | YES  |     | NULL    |       |
+| salary       | decimal(10,2) | YES  |     | NULL    |       |
+| comission    | decimal(5,2)  | YES  |     | NULL    |       |
+| manager_id   | int           | YES  |     | NULL    |       |
+| dept_id      | int           | YES  |     | NULL    |       |
++--------------+---------------+------+-----+---------+-------+
+11 rows in set (0.02 sec)
+
+mysql> alter table employees
+    -> add primary key (employee_id);
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employees
+    -> modify column last_name varchar(10) not null;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> modify column hire_date date not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'modify column hire_date date not null' at line 1
+mysql> alter table employees
+    -> modify column hire_date date not null;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employees
+    -> modify column job_id int(5) not null;
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> alter table employees
+    -> modify column email varchar(15) unique;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employees;
++--------------+---------------+------+-----+---------+-------+
+| Field        | Type          | Null | Key | Default | Extra |
++--------------+---------------+------+-----+---------+-------+
+| employee_id  | int           | NO   | PRI | NULL    |       |
+| first_name   | varchar(10)   | YES  |     | NULL    |       |
+| last_name    | varchar(10)   | NO   |     | NULL    |       |
+| email        | varchar(15)   | YES  | UNI | NULL    |       |
+| phone_number | varchar(20)   | YES  |     | NULL    |       |
+| hire_date    | date          | NO   |     | NULL    |       |
+| job_id       | int           | NO   |     | NULL    |       |
+| salary       | decimal(10,2) | YES  |     | NULL    |       |
+| comission    | decimal(5,2)  | YES  |     | NULL    |       |
+| manager_id   | int           | YES  |     | NULL    |       |
+| dept_id      | int           | YES  |     | NULL    |       |
++--------------+---------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> alter table employees
+    -> modify column salary decimal(10,2) not null;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employees;
++--------------+---------------+------+-----+---------+-------+
+| Field        | Type          | Null | Key | Default | Extra |
++--------------+---------------+------+-----+---------+-------+
+| employee_id  | int           | NO   | PRI | NULL    |       |
+| first_name   | varchar(10)   | YES  |     | NULL    |       |
+| last_name    | varchar(10)   | NO   |     | NULL    |       |
+| email        | varchar(15)   | YES  | UNI | NULL    |       |
+| phone_number | varchar(20)   | YES  |     | NULL    |       |
+| hire_date    | date          | NO   |     | NULL    |       |
+| job_id       | int           | NO   |     | NULL    |       |
+| salary       | decimal(10,2) | NO   |     | NULL    |       |
+| comission    | decimal(5,2)  | YES  |     | NULL    |       |
+| manager_id   | int           | YES  |     | NULL    |       |
+| dept_id      | int           | YES  |     | NULL    |       |
++--------------+---------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> alter table employees
+    -> modify column manager_id int(10) unique;
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> alter table employees
+    -> modify column dept_id int(10) not null;
+Query OK, 0 rows affected, 1 warning (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> desc employees;
++--------------+---------------+------+-----+---------+-------+
+| Field        | Type          | Null | Key | Default | Extra |
++--------------+---------------+------+-----+---------+-------+
+| employee_id  | int           | NO   | PRI | NULL    |       |
+| first_name   | varchar(10)   | YES  |     | NULL    |       |
+| last_name    | varchar(10)   | NO   |     | NULL    |       |
+| email        | varchar(15)   | YES  | UNI | NULL    |       |
+| phone_number | varchar(20)   | YES  |     | NULL    |       |
+| hire_date    | date          | NO   |     | NULL    |       |
+| job_id       | int           | NO   |     | NULL    |       |
+| salary       | decimal(10,2) | NO   |     | NULL    |       |
+| comission    | decimal(5,2)  | YES  |     | NULL    |       |
+| manager_id   | int           | YES  | UNI | NULL    |       |
+| dept_id      | int           | NO   |     | NULL    |       |
++--------------+---------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> alter table employees
+    -> modify column manager_id int(10) unique;
+Query OK, 0 rows affected, 2 warnings (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 2
+
+mysql> desc employees;
++--------------+---------------+------+-----+---------+-------+
+| Field        | Type          | Null | Key | Default | Extra |
++--------------+---------------+------+-----+---------+-------+
+| employee_id  | int           | NO   | PRI | NULL    |       |
+| first_name   | varchar(10)   | YES  |     | NULL    |       |
+| last_name    | varchar(10)   | NO   |     | NULL    |       |
+| email        | varchar(15)   | YES  | UNI | NULL    |       |
+| phone_number | varchar(20)   | YES  |     | NULL    |       |
+| hire_date    | date          | NO   |     | NULL    |       |
+| job_id       | int           | NO   |     | NULL    |       |
+| salary       | decimal(10,2) | NO   |     | NULL    |       |
+| comission    | decimal(5,2)  | YES  |     | NULL    |       |
+| manager_id   | int           | YES  | UNI | NULL    |       |
+| dept_id      | int           | NO   |     | NULL    |       |
++--------------+---------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)

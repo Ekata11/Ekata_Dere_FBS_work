@@ -1,0 +1,55 @@
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use firstbit_sql;
+Database changed
+mysql> show tables;
++------------------------+
+| Tables_in_firstbit_sql |
++------------------------+
+| country                |
+| department             |
+| dept                   |
+| emp                    |
+| employees              |
+| job                    |
+| job_history            |
+| lib_issue              |
+| member                 |
+| shirt                  |
++------------------------+
+10 rows in set (0.01 sec)
+
+mysql> create table books (
+    -> book_no int primary key,
+    -> book_name varchar(30),
+    -> author varchar(30),
+    -> cost decimal(7,2),
+    -> category char(10)
+    -> check (category in ('Science','Fiction','RDBMS','Database'))
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc book;
+ERROR 1146 (42S02): Table 'firstbit_sql.book' doesn't exist
+mysql> desc books;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| book_no   | int          | NO   | PRI | NULL    |       |
+| book_name | varchar(30)  | YES  |     | NULL    |       |
+| author    | varchar(30)  | YES  |     | NULL    |       |
+| cost      | decimal(7,2) | YES  |     | NULL    |       |
+| category  | char(10)     | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+5 rows in set (0.06 sec)

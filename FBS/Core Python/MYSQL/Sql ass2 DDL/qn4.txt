@@ -1,0 +1,32 @@
+mysql> create table member (
+    -> member_id int primary key,
+    -> member_name varchar(30),
+    -> address varchar(50),
+    -> acc_open_date date,
+    -> membership_type varchar(20)
+    -> check(membership_type in('lifetime','annual','half_yearly','quarterly')),
+    -> fees_paid int,
+    -> max_books_allowed int,
+    -> penalty_amt decimal(7,2)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> table member;
+Empty set (0.01 sec)
+
+mysql> desc member;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| member_id         | int          | NO   | PRI | NULL    |       |
+| member_name       | varchar(30)  | YES  |     | NULL    |       |
+| address           | varchar(50)  | YES  |     | NULL    |       |
+| acc_open_date     | date         | YES  |     | NULL    |       |
+| membership_type   | varchar(20)  | YES  |     | NULL    |       |
+| fees_paid         | int          | YES  |     | NULL    |       |
+| max_books_allowed | int          | YES  |     | NULL    |       |
+| penalty_amt       | decimal(7,2) | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql>

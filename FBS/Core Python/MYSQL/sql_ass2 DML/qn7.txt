@@ -1,0 +1,103 @@
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use firstbit_sql;
+Database changed
+mysql> table employees;
++-------------+------------+-----------------+--------------+------------+----------+---------+------+--------+------------+------+
+| employee_id | first_name | email           | phone_number | hire_date  | salary   | dept_id | age  | gender | j_date     | d_no |
++-------------+------------+-----------------+--------------+------------+----------+---------+------+--------+------------+------+
+|         101 | Ekata      | ekata@gmail.com | 989888777    | 2023-02-12 | 25000.00 |     401 |   25 | F      | 2023-11-11 |    3 |
+|         102 | Neha       | neha@gmail.com  | 589888777    | 2023-02-12 | 26000.00 |     402 |   25 | F      | 2023-11-11 |    3 |
+|         103 | Mansi      | mansi@gmail.com | 519888777    | 2023-02-12 | 26000.00 |     403 |   26 | F      | 2021-11-09 |    3 |
+|         104 | Gauri      | gauri@gmail.com | 87666544     | 2025-02-02 | 28000.00 |     404 |   29 | F      | 2025-02-08 |    4 |
+|         106 | Raj        | raj@gmail.com   | 82666544     | 2025-09-09 | 32000.00 |     406 |   29 | M      | 2025-09-08 |    4 |
++-------------+------------+-----------------+--------------+------------+----------+---------+------+--------+------------+------+
+5 rows in set (0.00 sec)
+
+mysql> table emp;
++------+-----------+-----------+-----------------+----------+------------+--------+--------+----------------+------------+---------+
+| eid  | f_name    | l_name    | email           | phone_no | hire_date  | job_id | salary | commission_pct | manager_id | dept_id |
++------+-----------+-----------+-----------------+----------+------------+--------+--------+----------------+------------+---------+
+|  101 | Ekata     | Dere      | not available   | 90897856 | 2025-1-1   |      1 |  27500 |              0 |        201 |      11 |
+|  102 | Neha      | Gaikwad   | neha@gmail.com  | 90897852 | 2025-1-2   |      1 |  28600 |              0 |        202 |      12 |
+|  103 | Mansi     | Nigade    | mansi@gmail.com | 90897855 | 2025-1-3   |      1 |  29700 |              0 |        203 |      13 |
+|  104 | Sujit     | Gaikwad   | sujit@gmail.com | 90897867 | 2025-1-7   |      1 |  28600 |              0 |        204 |      14 |
+|  105 | Sam       | Jadhav    | sam@gmail.com   | 90897755 | 2025-1-5   |      1 |  31900 |              0 |        205 |      15 |
+|  100 | Steven    | King      | SKING           | 51574567 | 1987-06-17 |      1 |  26400 |              0 |        200 |      10 |
+|  101 | Neena     | Kochhar   | not available   |  5151234 | 1987-06-18 |      2 |  18700 |              0 |        200 |      10 |
+|  102 | Lex       | De Haan   | Ldehaan         |  5151568 | 1987-06-19 |      3 |  18700 |              0 |        200 |      10 |
+|  103 | Alexander | Hunold    | Ahunold         | 51574568 | 1987-06-20 |      1 |   9900 |              0 |        103 |      60 |
+|  104 | Bruce     | Ernst     | Bernst          | 51515468 | 1987-06-21 |      4 |   6600 |              0 |        103 |      60 |
+|  105 | David     | Austin    | Daustin         |  5151566 | 1987-06-22 |      5 |  52800 |              0 |        103 |      60 |
+|  106 | Valli     | Pataballa | not available   |  5151123 | 1987-06-23 |      6 |   4620 |              0 |        114 |      30 |
+|  107 | Diana     | Lorentz   | Dlorentz        |  5151673 | 1987-06-24 |      7 |  13200 |              0 |        145 |      80 |
++------+-----------+-----------+-----------------+----------+------------+--------+--------+----------------+------------+---------+
+13 rows in set (0.00 sec)
+
+mysql> update emp
+    -> set email='not available',commission_pct=0.10;
+Query OK, 10 rows affected (0.06 sec)
+Rows matched: 13  Changed: 10  Warnings: 0
+
+mysql> table emp;
++------+-----------+-----------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+| eid  | f_name    | l_name    | email         | phone_no | hire_date  | job_id | salary | commission_pct | manager_id | dept_id |
++------+-----------+-----------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+|  101 | Ekata     | Dere      | not available | 90897856 | 2025-1-1   |      1 |  27500 |              0 |        201 |      11 |
+|  102 | Neha      | Gaikwad   | not available | 90897852 | 2025-1-2   |      1 |  28600 |              0 |        202 |      12 |
+|  103 | Mansi     | Nigade    | not available | 90897855 | 2025-1-3   |      1 |  29700 |              0 |        203 |      13 |
+|  104 | Sujit     | Gaikwad   | not available | 90897867 | 2025-1-7   |      1 |  28600 |              0 |        204 |      14 |
+|  105 | Sam       | Jadhav    | not available | 90897755 | 2025-1-5   |      1 |  31900 |              0 |        205 |      15 |
+|  100 | Steven    | King      | not available | 51574567 | 1987-06-17 |      1 |  26400 |              0 |        200 |      10 |
+|  101 | Neena     | Kochhar   | not available |  5151234 | 1987-06-18 |      2 |  18700 |              0 |        200 |      10 |
+|  102 | Lex       | De Haan   | not available |  5151568 | 1987-06-19 |      3 |  18700 |              0 |        200 |      10 |
+|  103 | Alexander | Hunold    | not available | 51574568 | 1987-06-20 |      1 |   9900 |              0 |        103 |      60 |
+|  104 | Bruce     | Ernst     | not available | 51515468 | 1987-06-21 |      4 |   6600 |              0 |        103 |      60 |
+|  105 | David     | Austin    | not available |  5151566 | 1987-06-22 |      5 |  52800 |              0 |        103 |      60 |
+|  106 | Valli     | Pataballa | not available |  5151123 | 1987-06-23 |      6 |   4620 |              0 |        114 |      30 |
+|  107 | Diana     | Lorentz   | not available |  5151673 | 1987-06-24 |      7 |  13200 |              0 |        145 |      80 |
++------+-----------+-----------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+13 rows in set (0.00 sec)
+
+mysql> alter table emp
+    -> modify commission_pct decimal(3,2);
+Query OK, 13 rows affected (0.09 sec)
+Records: 13  Duplicates: 0  Warnings: 0
+
+mysql> update emp
+    -> set commission_pct=0.10;
+Query OK, 13 rows affected (0.01 sec)
+Rows matched: 13  Changed: 13  Warnings: 0
+
+mysql> table emp;
++------+-----------+-----------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+| eid  | f_name    | l_name    | email         | phone_no | hire_date  | job_id | salary | commission_pct | manager_id | dept_id |
++------+-----------+-----------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+|  101 | Ekata     | Dere      | not available | 90897856 | 2025-1-1   |      1 |  27500 |           0.10 |        201 |      11 |
+|  102 | Neha      | Gaikwad   | not available | 90897852 | 2025-1-2   |      1 |  28600 |           0.10 |        202 |      12 |
+|  103 | Mansi     | Nigade    | not available | 90897855 | 2025-1-3   |      1 |  29700 |           0.10 |        203 |      13 |
+|  104 | Sujit     | Gaikwad   | not available | 90897867 | 2025-1-7   |      1 |  28600 |           0.10 |        204 |      14 |
+|  105 | Sam       | Jadhav    | not available | 90897755 | 2025-1-5   |      1 |  31900 |           0.10 |        205 |      15 |
+|  100 | Steven    | King      | not available | 51574567 | 1987-06-17 |      1 |  26400 |           0.10 |        200 |      10 |
+|  101 | Neena     | Kochhar   | not available |  5151234 | 1987-06-18 |      2 |  18700 |           0.10 |        200 |      10 |
+|  102 | Lex       | De Haan   | not available |  5151568 | 1987-06-19 |      3 |  18700 |           0.10 |        200 |      10 |
+|  103 | Alexander | Hunold    | not available | 51574568 | 1987-06-20 |      1 |   9900 |           0.10 |        103 |      60 |
+|  104 | Bruce     | Ernst     | not available | 51515468 | 1987-06-21 |      4 |   6600 |           0.10 |        103 |      60 |
+|  105 | David     | Austin    | not available |  5151566 | 1987-06-22 |      5 |  52800 |           0.10 |        103 |      60 |
+|  106 | Valli     | Pataballa | not available |  5151123 | 1987-06-23 |      6 |   4620 |           0.10 |        114 |      30 |
+|  107 | Diana     | Lorentz   | not available |  5151673 | 1987-06-24 |      7 |  13200 |           0.10 |        145 |      80 |
++------+-----------+-----------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+13 rows in set (0.00 sec)
+
+mysql>

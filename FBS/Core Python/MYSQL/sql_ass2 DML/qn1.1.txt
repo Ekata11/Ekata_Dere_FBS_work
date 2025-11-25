@@ -1,0 +1,59 @@
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 23
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use firstbit_sql;
+Database changed
+mysql> create table dept
+    -> (dept_id int,dept_name varchar(30),manager_id int,location_id int);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into dept(dept_id ,dept_name,manager_id ,location_id) values(10,"Administration",200,1700);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept(dept_id ,dept_name,manager_id ,location_id) values(20,"Marketing",201,1800);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept(dept_id ,dept_name,manager_id ,location_id) values(30,"Purchasing",114,1700);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept(dept_id ,dept_name,manager_id ,location_id) values(40,"Human Resources",203,2400);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into dept(dept_id ,dept_name,manager_id ,location_id) values(50,"Shipping",121,1500);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept(dept_id ,dept_name,manager_id ,location_id) values(60,"IT",103,1400);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into dept(dept_id ,dept_name,manager_id ,location_id) values(70,"Public Relations",204,2700);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into dept(dept_id ,dept_name,manager_id ,location_id) values(80,"Sales",145,2500);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> table dept;
++---------+------------------+------------+-------------+
+| dept_id | dept_name        | manager_id | location_id |
++---------+------------------+------------+-------------+
+|      10 | Administration   |        200 |        1700 |
+|      20 | Marketing        |        201 |        1800 |
+|      30 | Purchasing       |        114 |        1700 |
+|      40 | Human Resources  |        203 |        2400 |
+|      50 | Shipping         |        121 |        1500 |
+|      60 | IT               |        103 |        1400 |
+|      70 | Public Relations |        204 |        2700 |
+|      80 | Sales            |        145 |        2500 |
++---------+------------------+------------+-------------+
+8 rows in set (0.00 sec)
+
+mysql>
