@@ -1,0 +1,100 @@
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use firstbit_sql;
+Database changed
+mysql> show tables;
++------------------------+
+| Tables_in_firstbit_sql |
++------------------------+
+| country                |
+| department             |
+| dept                   |
+| emp                    |
+| employees              |
+| job                    |
+| job_history            |
+| shirt                  |
++------------------------+
+8 rows in set (0.00 sec)
+
+mysql> create table member (
+    -> Member_id int,
+    -> Member_name varchar(30),
+    -> Member_address varchar(50),
+    -> acc_open_date date,
+    -> Membership_type varchar(20),
+    -> Fees_paid int,
+    -> Max_books_allowed int,
+    -> Penalty_amt decimal(7,2)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> create table books (
+    -> Book_no int,
+    -> Book_name varchar(30),
+    -> Author varchar(30),
+    -> Cost decimal(7,2),
+    -> Category char(10)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> create table issue (
+    -> Lib_issue_id int,
+    -> Book_no int,
+    -> Member_id int,
+    -> Issue_date date,
+    -> Return_date date
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc member;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| Member_id         | int          | YES  |     | NULL    |       |
+| Member_name       | varchar(30)  | YES  |     | NULL    |       |
+| Member_address    | varchar(50)  | YES  |     | NULL    |       |
+| acc_open_date     | date         | YES  |     | NULL    |       |
+| Membership_type   | varchar(20)  | YES  |     | NULL    |       |
+| Fees_paid         | int          | YES  |     | NULL    |       |
+| Max_books_allowed | int          | YES  |     | NULL    |       |
+| Penalty_amt       | decimal(7,2) | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+8 rows in set (0.03 sec)
+
+mysql> desc books;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| Book_no   | int          | YES  |     | NULL    |       |
+| Book_name | varchar(30)  | YES  |     | NULL    |       |
+| Author    | varchar(30)  | YES  |     | NULL    |       |
+| Cost      | decimal(7,2) | YES  |     | NULL    |       |
+| Category  | char(10)     | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> desc issue;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| Lib_issue_id | int  | YES  |     | NULL    |       |
+| Book_no      | int  | YES  |     | NULL    |       |
+| Member_id    | int  | YES  |     | NULL    |       |
+| Issue_date   | date | YES  |     | NULL    |       |
+| Return_date  | date | YES  |     | NULL    |       |
++--------------+------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql>

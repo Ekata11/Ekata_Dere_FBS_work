@@ -1,0 +1,24 @@
+mysql> insert into issue
+    -> values
+    -> (7006,106,6,'2006-12-6',null),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 4
+mysql> insert into issue
+    -> values
+    -> (7006,106,6,'2006-12-6',null);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> table issue;
++--------------+---------+-----------+------------+-------------+
+| lib_issue_id | book_no | member_id | issue_id   | return_date |
++--------------+---------+-----------+------------+-------------+
+|         7001 |     101 |         1 | 2006-12-01 | NULL        |
+|         7002 |     102 |         2 | 2006-12-02 | NULL        |
+|         7003 |     103 |         3 | 2006-12-03 | NULL        |
+|         7004 |     104 |         4 | 2006-12-04 | NULL        |
+|         7005 |     105 |         5 | 2006-12-05 | NULL        |
+|         7006 |     106 |         6 | 2006-12-06 | NULL        |
++--------------+---------+-----------+------------+-------------+
+6 rows in set (0.00 sec)
+
+mysql>
