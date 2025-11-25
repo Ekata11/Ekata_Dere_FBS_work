@@ -1,7 +1,0 @@
-
-mysql> drop table member;
-Query OK, 0 rows affected (0.02 sec)
-
-mysql> desc member;
-ERROR 1146 (42S02): Table 'firstbit_sql.member' doesn't exist
-mysql>

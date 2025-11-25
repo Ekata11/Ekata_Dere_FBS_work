@@ -1,7 +1,0 @@
-mysql> drop table books;
-Query OK, 0 rows affected (0.01 sec)
-
-mysql> table books;
-ERROR 1146 (42S02): Table 'firstbit_sql.books' doesn't exist
-mysql>
-
