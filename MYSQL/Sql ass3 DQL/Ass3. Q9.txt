@@ -1,0 +1,9 @@
+mysql> select count(*) as total_employees from emp;
++-----------------+
+| total_employees |
++-----------------+
+|              13 |
++-----------------+
+1 row in set (0.02 sec)
+
+mysql>

@@ -1,0 +1,18 @@
+mysql> select f_name,l_name,salary from emp where salary not between 10000 and 15000;
++-----------+-----------+--------+
+| f_name    | l_name    | salary |
++-----------+-----------+--------+
+| Ekata     | Dere      |  27500 |
+| Neha      | Gaikwad   |  28600 |
+| Mansi     | Nigade    |  29700 |
+| Sujit     | Gaikwad   |  28600 |
+| Sam       | Jadhav    |  31900 |
+| Steven    | King      |  26400 |
+| Neena     | Kochhar   |  18700 |
+| Lex       | De Haan   |  18700 |
+| Alexander | Hunold    |   9900 |
+| Bruce     | Ernst     |   6600 |
+| David     | Austin    |  52800 |
+| Valli     | Pataballa |   4620 |
++-----------+-----------+--------+
+12 rows in set (0.00 sec)

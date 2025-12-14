@@ -1,0 +1,17 @@
+mysql> select distinct dept_id from emp;
++---------+
+| dept_id |
++---------+
+|      11 |
+|      12 |
+|      13 |
+|      14 |
+|      15 |
+|      10 |
+|      60 |
+|      30 |
+|      80 |
++---------+
+9 rows in set (0.01 sec)
+
+mysql>

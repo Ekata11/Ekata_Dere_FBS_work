@@ -1,0 +1,11 @@
+
+mysql> select avg(salary) as avg_salary,
+    -> count(*) as num_employees from emp;
++------------+---------------+
+| avg_salary | num_employees |
++------------+---------------+
+| 22863.0769 |            13 |
++------------+---------------+
+1 row in set (0.00 sec)
+
+mysql>

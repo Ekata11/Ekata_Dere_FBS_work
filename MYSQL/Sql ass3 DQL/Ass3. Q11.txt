@@ -1,0 +1,21 @@
+
+mysql> select * from limit 10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 10' at line 1
+mysql> select * from emp limit 10;
++------+-----------+---------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+| eid  | f_name    | l_name  | email         | phone_no | hire_date  | job_id | salary | commission_pct | manager_id | dept_id |
++------+-----------+---------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+|  101 | Ekata     | Dere    | not available | 90897856 | 2025-1-1   |      1 |  27500 |           0.10 |        201 |      11 |
+|  102 | Neha      | Gaikwad | not available | 90897852 | 2025-1-2   |      1 |  28600 |           0.10 |        202 |      12 |
+|  103 | Mansi     | Nigade  | not available | 90897855 | 2025-1-3   |      1 |  29700 |           0.10 |        203 |      13 |
+|  104 | Sujit     | Gaikwad | not available | 90897867 | 2025-1-7   |      1 |  28600 |           0.10 |        204 |      14 |
+|  105 | Sam       | Jadhav  | not available | 90897755 | 2025-1-5   |      1 |  31900 |           0.10 |        205 |      15 |
+|  100 | Steven    | King    | not available | 51574567 | 1987-06-17 |      1 |  26400 |           0.10 |        200 |      10 |
+|  101 | Neena     | Kochhar | not available |  5151234 | 1987-06-18 |      2 |  18700 |           0.10 |        200 |      10 |
+|  102 | Lex       | De Haan | not available |  5151568 | 1987-06-19 |      3 |  18700 |           0.10 |        200 |      10 |
+|  103 | Alexander | Hunold  | not available | 51574568 | 1987-06-20 |      1 |   9900 |           0.10 |        103 |      60 |
+|  104 | Bruce     | Ernst   | not available | 51515468 | 1987-06-21 |      4 |   6600 |           0.10 |        103 |      60 |
++------+-----------+---------+---------------+----------+------------+--------+--------+----------------+------------+---------+
+10 rows in set (0.00 sec)
+
+mysql>

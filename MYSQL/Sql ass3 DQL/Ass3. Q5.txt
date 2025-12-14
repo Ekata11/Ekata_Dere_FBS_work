@@ -1,0 +1,21 @@
+mysql> select eid, f_name,l_name,salary from emp order by salary asc;
++------+-----------+-----------+--------+
+| eid  | f_name    | l_name    | salary |
++------+-----------+-----------+--------+
+|  106 | Valli     | Pataballa |   4620 |
+|  104 | Bruce     | Ernst     |   6600 |
+|  103 | Alexander | Hunold    |   9900 |
+|  107 | Diana     | Lorentz   |  13200 |
+|  101 | Neena     | Kochhar   |  18700 |
+|  102 | Lex       | De Haan   |  18700 |
+|  100 | Steven    | King      |  26400 |
+|  101 | Ekata     | Dere      |  27500 |
+|  102 | Neha      | Gaikwad   |  28600 |
+|  104 | Sujit     | Gaikwad   |  28600 |
+|  103 | Mansi     | Nigade    |  29700 |
+|  105 | Sam       | Jadhav    |  31900 |
+|  105 | David     | Austin    |  52800 |
++------+-----------+-----------+--------+
+13 rows in set (0.00 sec)
+
+mysql>

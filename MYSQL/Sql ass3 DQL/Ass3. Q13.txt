@@ -1,0 +1,12 @@
+12 rows in set (0.00 sec)
+
+mysql> select f_name,l_name,dept_id from emp where dept_id in (30,100)
+    -> order by dept_id asc;
++--------+-----------+---------+
+| f_name | l_name    | dept_id |
++--------+-----------+---------+
+| Valli  | Pataballa |      30 |
++--------+-----------+---------+
+1 row in set (0.00 sec)
+
+mysql>

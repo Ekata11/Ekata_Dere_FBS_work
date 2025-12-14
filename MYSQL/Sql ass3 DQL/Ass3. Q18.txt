@@ -1,0 +1,12 @@
+mysql> select l_name from emp where char_length(l_name) = 6;
++--------+
+| l_name |
++--------+
+| Nigade |
+| Jadhav |
+| Hunold |
+| Austin |
++--------+
+4 rows in set (0.01 sec)
+
+mysql>

@@ -1,0 +1,17 @@
+mysql> select f_name,l_name,hire_date from emp
+    -> where year(hire_date) = 1987;
++-----------+-----------+------------+
+| f_name    | l_name    | hire_date  |
++-----------+-----------+------------+
+| Steven    | King      | 1987-06-17 |
+| Neena     | Kochhar   | 1987-06-18 |
+| Lex       | De Haan   | 1987-06-19 |
+| Alexander | Hunold    | 1987-06-20 |
+| Bruce     | Ernst     | 1987-06-21 |
+| David     | Austin    | 1987-06-22 |
+| Valli     | Pataballa | 1987-06-23 |
+| Diana     | Lorentz   | 1987-06-24 |
++-----------+-----------+------------+
+8 rows in set (0.01 sec)
+
+mysql>

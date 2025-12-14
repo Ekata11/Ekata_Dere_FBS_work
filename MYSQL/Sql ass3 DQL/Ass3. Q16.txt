@@ -1,0 +1,10 @@
+mysql> select f_name from emp
+    -> where lower(f_name) like '%b%'
+    -> and
+    -> lower(f_name) like '%c%';
++--------+
+| f_name |
++--------+
+| Bruce  |
++--------+
+1 row in set (0.01 sec)

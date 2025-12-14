@@ -1,0 +1,24 @@
+
+mysql> select f_name,l_name,salary,
+    -> (salary * 0.15) as pf
+    -> from emp;
++-----------+-----------+--------+---------+
+| f_name    | l_name    | salary | pf      |
++-----------+-----------+--------+---------+
+| Ekata     | Dere      |  27500 | 4125.00 |
+| Neha      | Gaikwad   |  28600 | 4290.00 |
+| Mansi     | Nigade    |  29700 | 4455.00 |
+| Sujit     | Gaikwad   |  28600 | 4290.00 |
+| Sam       | Jadhav    |  31900 | 4785.00 |
+| Steven    | King      |  26400 | 3960.00 |
+| Neena     | Kochhar   |  18700 | 2805.00 |
+| Lex       | De Haan   |  18700 | 2805.00 |
+| Alexander | Hunold    |   9900 | 1485.00 |
+| Bruce     | Ernst     |   6600 |  990.00 |
+| David     | Austin    |  52800 | 7920.00 |
+| Valli     | Pataballa |   4620 |  693.00 |
+| Diana     | Lorentz   |  13200 | 1980.00 |
++-----------+-----------+--------+---------+
+13 rows in set (0.05 sec)
+
+mysql>

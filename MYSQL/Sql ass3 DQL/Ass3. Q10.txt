@@ -1,0 +1,10 @@
+
+mysql> select count(distinct job_id) as num_job from emp;
++---------+
+| num_job |
++---------+
+|       7 |
++---------+
+1 row in set (0.01 sec)
+
+mysql>
